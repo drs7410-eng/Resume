@@ -1,9 +1,42 @@
 {
-  "name": "Abdullah",
-  "title": "Software Beginner",
-  "location": "Saudi Arabia",
-  "email": "",
-  "skills": [],
-  "experience": []
+  "name": "Abdullah Al-Shehri",
+  "title": "Junior Software Developer",
+  "location": "Riyadh, Saudi Arabia",
+  "email": "abdullah.al-shehri@example.com",
+  "website": "https://abdullah.dev",
+  "summary": "Junior developer focused on building clean, reliable software and learning modern web technologies.",
+  "skills": [
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "REST APIs",
+    "HTML & CSS",
+    "Git & GitHub",
+    "Unit Testing"
+  ],
+  "experience": [
+    {
+      "company": "BrightPath Labs",
+      "role": "Junior Frontend Developer",
+      "location": "Remote",
+      "period": "2023 – Present",
+      "highlights": [
+        "Built reusable React components and utility hooks to speed up feature delivery by ~20%.",
+        "Collaborated with designers to implement responsive layouts and accessibility fixes (WCAG 2.1 AA).",
+        "Integrated REST APIs and improved client-side error handling for a smoother user experience."
+      ]
+    },
+    {
+      "company": "Tech Horizons",
+      "role": "Software Developer Intern",
+      "location": "Jeddah, Saudi Arabia",
+      "period": "2022",
+      "highlights": [
+        "Prototyped internal dashboards with vanilla JS and charting libraries to visualize KPI trends.",
+        "Automated data cleanup scripts in Node.js, reducing manual report prep time by 30%.",
+        "Documented onboarding steps and code walkthroughs to help new interns ramp up quickly."
+      ]
+    }
+  ]
 }
-Add profile data
