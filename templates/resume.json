@@ -1,0 +1,11 @@
+{
+  "project_type": "resume",
+  "output_formats": ["markdown", "pdf", "html"],
+  "sections": [
+    "profile",
+    "skills",
+    "experience"
+  ],
+  "language": "English"
+}
+Add resume template
