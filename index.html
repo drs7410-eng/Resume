@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>السيرة الذاتية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-nav">
+    <div class="container nav__inner">
+      <div class="nav__brand">
+        <p id="nav-name" class="nav__name">السيرة الذاتية</p>
+        <p id="nav-title" class="nav__title">ملف شخصي</p>
+      </div>
+      <nav class="nav__links" aria-label="روابط الأقسام">
+        <a href="#hero">الرئيسية</a>
+        <a href="#about">نبذة</a>
+        <a href="#experience">الخبرة</a>
+        <a href="#achievements">الإنجازات</a>
+        <a href="#education">المؤهلات</a>
+        <a href="#trainings">الدورات</a>
+        <a href="#skills">المهارات</a>
+        <a href="#keywords">الجدارات</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <div class="nav__actions">
+        <a id="nav-cv" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">تحميل السيرة</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">السيرة الذاتية</p>
+          <h1 id="hero-name">—</h1>
+          <p id="hero-title" class="subtitle">—</p>
+          <p id="hero-location" class="meta">—</p>
+          <p id="hero-summary" class="summary">—</p>
+          <div class="hero__actions">
+            <a id="hero-email" class="btn" href="#">البريد الإلكتروني</a>
+            <a id="hero-phone" class="btn btn--ghost" href="#">الهاتف</a>
+            <a id="hero-site" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">الموقع الشخصي</a>
+            <a id="hero-cv" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">تحميل السيرة</a>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <div class="badge">
+            <span class="dot"></span>
+            <span id="hero-status">متاح للتواصل</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section card">
+      <div class="section__header">
+        <h2>نبذة مختصرة</h2>
+        <p class="section__hint">ملخص سريع</p>
+      </div>
+      <p id="about-text" class="body-text">—</p>
+    </section>
+
+    <section id="experience" class="section card">
+      <div class="section__header">
+        <h2>الخبرة العملية</h2>
+        <p class="section__hint">الأدوار والمسؤوليات</p>
+      </div>
+      <div id="experience-list" class="stack"></div>
+    </section>
+
+    <section id="achievements" class="section card">
+      <div class="section__header">
+        <h2>أبرز الإنجازات</h2>
+        <p class="section__hint">نتائج ملموسة</p>
+      </div>
+      <div id="achievements-list" class="grid cards"></div>
+      <div class="section__subheader">
+        <h3>مؤشرات رقمية</h3>
+        <p class="section__hint">ملخص بالأرقام</p>
+      </div>
+      <div id="charts" class="chart-grid"></div>
+    </section>
+
+    <section id="education" class="section card">
+      <div class="section__header">
+        <h2>المؤهلات العلمية</h2>
+        <p class="section__hint">الدراسة الأكاديمية</p>
+      </div>
+      <div id="education-list" class="stack"></div>
+    </section>
+
+    <section id="trainings" class="section card">
+      <div class="section__header">
+        <h2>الدورات والشهادات</h2>
+        <p class="section__hint">التطوير المهني</p>
+      </div>
+      <div id="trainings-list" class="grid cards"></div>
+    </section>
+
+    <section id="skills" class="section card">
+      <div class="section__header">
+        <h2>المهارات</h2>
+        <p class="section__hint">حسب الفئة</p>
+      </div>
+      <div id="skills-list" class="stack"></div>
+    </section>
+
+    <section id="keywords" class="section card">
+      <div class="section__header">
+        <h2>الكلمات والجدارات</h2>
+        <p class="section__hint">أهم الكلمات المفتاحية</p>
+      </div>
+      <div id="keywords-list" class="tags"></div>
+    </section>
+
+    <section id="contact" class="section card">
+      <div class="section__header">
+        <h2>تواصل معي</h2>
+        <p class="section__hint">بيانات الاتصال</p>
+      </div>
+      <div id="contact-list" class="contact-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__title" id="footer-name">—</p>
+        <p class="footer__text">تم إعداد هذه الصفحة بتنسيق عربي وبتصميم حديث.</p>
+      </div>
+      <div class="footer__links" id="footer-links"></div>
+    </div>
+  </footer>
+
+  <script>
+    const empty = '—';
+
+    const safeText = (value, fallback = empty) => {
+      if (Array.isArray(value)) return value.length ? value : [];
+      if (value === null || value === undefined) return fallback;
+      if (typeof value === 'string' && value.trim() === '') return fallback;
+      return value;
+    };
+
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = safeText(value);
+      el.textContent = text;
+    };
+
+    const createPill = (text) => {
+      const span = document.createElement('span');
+      span.className = 'pill';
+      span.textContent = text;
+      return span;
+    };
+
+    const renderTimeline = (list, containerId) => {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      if (!list || list.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      list.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'timeline';
+
+        const header = document.createElement('div');
+        header.className = 'timeline__header';
+
+        const title = document.createElement('p');
+        title.className = 'timeline__title';
+        title.textContent = safeText(item.role, empty);
+
+        const place = document.createElement('p');
+        place.className = 'timeline__meta';
+        const parts = [safeText(item.company, empty), safeText(item.location, empty)].filter(Boolean).join(' · ');
+        place.textContent = parts || empty;
+
+        const period = document.createElement('p');
+        period.className = 'timeline__period';
+        period.textContent = safeText(item.period, empty);
+
+        header.append(title, place, period);
+
+        const body = document.createElement('ul');
+        body.className = 'bullets';
+        (item.details || item.highlights || []).forEach((detail) => {
+          const li = document.createElement('li');
+          li.textContent = detail;
+          body.appendChild(li);
+        });
+
+        card.append(header, body);
+        container.appendChild(card);
+      });
+    };
+
+    const renderCards = (list, containerId) => {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      if (!list || list.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      list.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'mini-card';
+
+        const title = document.createElement('p');
+        title.className = 'mini-card__title';
+        title.textContent = safeText(item.title || item.name, empty);
+
+        const meta = document.createElement('p');
+        meta.className = 'mini-card__meta';
+        const parts = [item.issuer || item.organization, item.period].filter(Boolean).join(' · ');
+        meta.textContent = parts || empty;
+
+        const desc = document.createElement('p');
+        desc.className = 'mini-card__text';
+        desc.textContent = safeText(item.description, empty);
+
+        card.append(title, meta, desc);
+        container.appendChild(card);
+      });
+    };
+
+    const renderSkills = (skills) => {
+      const container = document.getElementById('skills-list');
+      container.innerHTML = '';
+      if (!skills || skills.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      skills.forEach((group) => {
+        const block = document.createElement('div');
+        block.className = 'skill-block';
+
+        const title = document.createElement('p');
+        title.className = 'skill-block__title';
+        if (typeof group === 'string') {
+          title.textContent = 'مهارات إضافية';
+        } else {
+          title.textContent = safeText(group.category || group.label, empty);
+        }
+
+        const pills = document.createElement('div');
+        pills.className = 'pill-row';
+        const items = typeof group === 'string' ? [group] : (group.items || group.skills || []);
+        items.forEach((skill) => {
+          pills.appendChild(createPill(skill));
+        });
+
+        block.append(title, pills);
+        container.appendChild(block);
+      });
+    };
+
+    const renderCharts = (charts) => {
+      const container = document.getElementById('charts');
+      container.innerHTML = '';
+      if (!charts || charts.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      charts.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'chart-card';
+
+        const label = document.createElement('p');
+        label.className = 'chart-card__label';
+        label.textContent = safeText(item.label, empty);
+
+        const bar = document.createElement('div');
+        bar.className = 'chart-card__bar';
+
+        const fill = document.createElement('span');
+        fill.style.width = `${Math.min(Math.max(item.value || 0, 0), 100)}%`;
+        fill.textContent = `${item.value || 0}%`;
+
+        bar.appendChild(fill);
+        card.append(label, bar);
+        container.appendChild(card);
+      });
+    };
+
+    const renderKeywords = (keywords) => {
+      const container = document.getElementById('keywords-list');
+      container.innerHTML = '';
+      if (!keywords || keywords.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      keywords.forEach((word) => {
+        container.appendChild(createPill(word));
+      });
+    };
+
+    const renderContact = (contact = {}) => {
+      const container = document.getElementById('contact-list');
+      container.innerHTML = '';
+      const items = [];
+
+      if (contact.email) items.push({ label: 'البريد الإلكتروني', value: contact.email, href: `mailto:${contact.email}` });
+      if (contact.phone) items.push({ label: 'الهاتف', value: contact.phone, href: `tel:${contact.phone}` });
+      if (contact.website) items.push({ label: 'الموقع الشخصي', value: contact.website, href: contact.website, isExternal: true });
+
+      if (items.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات تواصل متاحة حالياً.' + '</p>';
+        return;
+      }
+
+      items.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'contact-card';
+
+        const label = document.createElement('p');
+        label.className = 'contact-card__label';
+        label.textContent = item.label;
+
+        const link = document.createElement('a');
+        link.className = 'contact-card__value';
+        link.textContent = item.value;
+        link.href = item.href;
+        link.target = item.isExternal ? '_blank' : '_self';
+        link.rel = item.isExternal ? 'noreferrer' : '';
+
+        card.append(label, link);
+        container.appendChild(card);
+      });
+    };
+
+    const applyLinkOrDisable = (el, href, textWhenMissing) => {
+      if (!el) return;
+      if (href) {
+        el.href = href;
+        el.classList.remove('btn--disabled');
+      } else {
+        el.href = '#';
+        el.classList.add('btn--disabled');
+        if (textWhenMissing) el.textContent = textWhenMissing;
+      }
+    };
+
+    async function loadProfile() {
+      try {
+        const response = await fetch('./data/profile.json');
+        if (!response.ok) throw new Error('تعذر تحميل البيانات');
+        const profile = await response.json();
+
+        const name = safeText(profile.name, empty);
+        const title = safeText(profile.title, empty);
+        const location = safeText(profile.location, empty);
+        const summary = safeText(profile.summary || profile.about, empty);
+        const about = safeText(profile.about || profile.summary, empty);
+
+        document.title = name !== empty ? `السيرة الذاتية | ${name}` : 'السيرة الذاتية';
+
+        setText('nav-name', name);
+        setText('nav-title', title || location);
+
+        setText('hero-name', name);
+        setText('hero-title', title);
+        setText('hero-location', location);
+        setText('hero-summary', summary);
+        setText('about-text', about);
+        setText('footer-name', name);
+
+        const contact = profile.contact || {};
+        applyLinkOrDisable(document.getElementById('nav-cv'), contact.cv, 'قريباً');
+        applyLinkOrDisable(document.getElementById('hero-cv'), contact.cv, 'قريباً');
+        applyLinkOrDisable(document.getElementById('hero-site'), contact.website, '—');
+        applyLinkOrDisable(document.getElementById('hero-email'), contact.email ? `mailto:${contact.email}` : '', '—');
+        applyLinkOrDisable(document.getElementById('hero-phone'), contact.phone ? `tel:${contact.phone}` : '', '—');
+
+        const footerLinks = document.getElementById('footer-links');
+        footerLinks.innerHTML = '';
+        ['email', 'phone', 'website'].forEach((key) => {
+          if (!contact[key]) return;
+          const link = document.createElement('a');
+          link.href = key === 'email' ? `mailto:${contact.email}` : key === 'phone' ? `tel:${contact.phone}` : contact.website;
+          link.textContent = contact[key];
+          link.target = key === 'website' ? '_blank' : '_self';
+          link.rel = key === 'website' ? 'noreferrer' : '';
+          footerLinks.appendChild(link);
+        });
+
+        renderTimeline(profile.experience, 'experience-list');
+        renderCards(profile.achievements, 'achievements-list');
+        renderCharts(profile.charts);
+        renderTimeline(profile.education, 'education-list');
+        renderCards(profile.trainings, 'trainings-list');
+        renderSkills(profile.skills);
+        renderKeywords(profile.keywords);
+        renderContact(contact);
+      } catch (error) {
+        console.error(error);
+        const main = document.querySelector('main');
+        main.insertAdjacentHTML('afterbegin', '<div class="error">تعذر تحميل بيانات السيرة الذاتية.</div>');
+      }
+    }
+
+    loadProfile();
+  </script>
+</body>
+</html>
