@@ -1,9 +1,19 @@
 {
-  "name": "Abdullah",
-  "title": "Software Beginner",
-  "location": "Saudi Arabia",
-  "email": "",
+  "name": "",
+  "title": "",
+  "location": "",
+  "summary": "",
+  "about": "",
+  "contact": {
+    "email": "",
+    "phone": "",
+    "website": "",
+    "cv": ""
+  },
+  "experience": [],
+  "achievements": [],
+  "education": [],
+  "trainings": [],
   "skills": [],
-  "experience": []
+  "keywords": []
 }
-Add profile data
