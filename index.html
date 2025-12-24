@@ -80,6 +80,11 @@
         <p class="section__hint">نتائج ملموسة</p>
       </div>
       <div id="achievements-list" class="grid cards"></div>
+      <div class="section__subheader">
+        <h3>مؤشرات رقمية</h3>
+        <p class="section__hint">ملخص بالأرقام</p>
+      </div>
+      <div id="charts" class="chart-grid"></div>
     </section>
 
     <section id="education" class="section card">
@@ -241,16 +246,49 @@
 
         const title = document.createElement('p');
         title.className = 'skill-block__title';
-        title.textContent = safeText(group.category || group.label, empty);
+        if (typeof group === 'string') {
+          title.textContent = 'مهارات إضافية';
+        } else {
+          title.textContent = safeText(group.category || group.label, empty);
+        }
 
         const pills = document.createElement('div');
         pills.className = 'pill-row';
-        (group.items || group.skills || []).forEach((skill) => {
+        const items = typeof group === 'string' ? [group] : (group.items || group.skills || []);
+        items.forEach((skill) => {
           pills.appendChild(createPill(skill));
         });
 
         block.append(title, pills);
         container.appendChild(block);
+      });
+    };
+
+    const renderCharts = (charts) => {
+      const container = document.getElementById('charts');
+      container.innerHTML = '';
+      if (!charts || charts.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      charts.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'chart-card';
+
+        const label = document.createElement('p');
+        label.className = 'chart-card__label';
+        label.textContent = safeText(item.label, empty);
+
+        const bar = document.createElement('div');
+        bar.className = 'chart-card__bar';
+
+        const fill = document.createElement('span');
+        fill.style.width = `${Math.min(Math.max(item.value || 0, 0), 100)}%`;
+        fill.textContent = `${item.value || 0}%`;
+
+        bar.appendChild(fill);
+        card.append(label, bar);
+        container.appendChild(card);
       });
     };
 
@@ -357,6 +395,7 @@
 
         renderTimeline(profile.experience, 'experience-list');
         renderCards(profile.achievements, 'achievements-list');
+        renderCharts(profile.charts);
         renderTimeline(profile.education, 'education-list');
         renderCards(profile.trainings, 'trainings-list');
         renderSkills(profile.skills);
