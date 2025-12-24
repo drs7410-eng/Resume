@@ -1,13 +1,27 @@
 # Resume
 
-A simple, static personal resume site built with HTML and CSS (Arabic, RTL).
+موقع سيرة ذاتية شخصي (عربي، اتجاه RTL) مبني بـ HTML + CSS + JS فقط.
 
-## Structure
-- `data/profile.json` — source profile data.
-- `templates/resume.json` — resume template and section order.
-- `prompts/generate-resume.md` — content generation rules.
-- `index.html` — rendered resume layout (RTL, Arabic); pulls data from `data/profile.json`.
-- `styles.css` — styling for the site.
+## أين أعدل المحتوى؟
+- عدّل ملف `data/profile.json` ليكون المصدر الوحيد للبيانات (الاسم، الملخص، الخبرات، التعليم، الدورات، المهارات، الكلمات المفتاحية، بيانات الاتصال، رابط السيرة PDF إن وجد).
+- لا حاجة لأي أدوات بناء؛ يتم تحميل البيانات مباشرة في `index.html`.
 
-## Run locally
-Open `index.html` in a browser via a simple static server (for example: `python -m http.server 8000`) so the page can load `data/profile.json`.
+## الملفات
+- `index.html` — صفحة السيرة/الملف الشخصي بواجهة عربية واتجاه RTL، تحمل البيانات ديناميكياً من `data/profile.json`.
+- `styles.css` — التنسيقات والهوية البصرية (تصميم حديث متجاوب).
+- `data/profile.json` — بيانات السيرة الذاتية.
+- `templates/resume.json`، `prompts/generate-resume.md` — مراجع مساعدة.
+
+## التشغيل محلياً
+1) شغّل خادماً ثابتاً من جذر المشروع (مثال: `python -m http.server 8000` أو `npx serve .`).
+2) افتح المتصفح على `http://localhost:8000` لضمان أن `data/profile.json` تُقرأ بشكل صحيح.
+
+## النشر على GitHub Pages
+1) من إعدادات المستودع، فعّل Pages واختر الفرع `main` أو الفرع الحالي مع المسار الجذر `/` كمصدر.
+2) احفظ الإعدادات، وستجد رابط النشر في نفس الصفحة بعد دقائق.
+3) حدّث محتوى `data/profile.json` ثم ادفع التعديلات ليتم تحديث الموقع تلقائياً.
+
+## ربط نطاق مخصص (Custom Domain)
+1) أضف سجل `CNAME` في DNS يشير إلى رابط GitHub Pages المخصص بك (مثل `username.github.io`).
+2) في إعدادات GitHub Pages، أضف النطاق المخصص نفسه وسيتم إنشاء ملف `CNAME` تلقائياً.
+3) انتظر حتى يكتمل الانتشار (Propagation)، ثم اختبر أن النطاق يعرض الموقع.

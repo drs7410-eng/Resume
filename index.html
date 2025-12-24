@@ -3,214 +3,369 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>السيرة الذاتية | عبدالله الشهري</title>
+  <title>السيرة الذاتية</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container hero__content">
-      <div>
-        <p class="eyebrow">السيرة الذاتية</p>
-        <h1 id="name">عبدالله الشهري</h1>
-        <p class="subtitle" id="title">مطور برمجيات مبتدئ · الرياض، المملكة العربية السعودية</p>
-        <p class="summary" id="summary">
-          مطور برمجيات مبتدئ يهتم بكتابة برمجيات نظيفة وموثوقة ويتعلم تقنيات الويب الحديثة.
-        </p>
-        <div class="hero__meta" id="location">الرياض، المملكة العربية السعودية</div>
-        <div class="hero__actions">
-          <a class="btn" id="email-link" href="mailto:abdullah.al-shehri@example.com">راسلني</a>
-          <a class="btn btn--ghost" id="website-link" href="https://abdullah.dev" target="_blank" rel="noreferrer">الموقع الشخصي</a>
-        </div>
+  <header class="top-nav">
+    <div class="container nav__inner">
+      <div class="nav__brand">
+        <p id="nav-name" class="nav__name">السيرة الذاتية</p>
+        <p id="nav-title" class="nav__title">ملف شخصي</p>
       </div>
-      <div class="hero__badge">
-        <span class="badge">متاح لفرص جديدة</span>
+      <nav class="nav__links" aria-label="روابط الأقسام">
+        <a href="#hero">الرئيسية</a>
+        <a href="#about">نبذة</a>
+        <a href="#experience">الخبرة</a>
+        <a href="#achievements">الإنجازات</a>
+        <a href="#education">المؤهلات</a>
+        <a href="#trainings">الدورات</a>
+        <a href="#skills">المهارات</a>
+        <a href="#keywords">الجدارات</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <div class="nav__actions">
+        <a id="nav-cv" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">تحميل السيرة</a>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="card" id="profile-card">
-      <div class="section-header">
-        <h2>الملف الشخصي</h2>
-        <p class="section-subtitle">نبذة سريعة</p>
-      </div>
-      <p class="body-text" id="profile-summary">
-        مطور برمجيات مبتدئ يهتم بكتابة برمجيات نظيفة وموثوقة ويتعلم تقنيات الويب الحديثة.
-      </p>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span class="contact-label">البريد الإلكتروني</span>
-          <a id="contact-email" href="mailto:abdullah.al-shehri@example.com">abdullah.al-shehri@example.com</a>
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">السيرة الذاتية</p>
+          <h1 id="hero-name">—</h1>
+          <p id="hero-title" class="subtitle">—</p>
+          <p id="hero-location" class="meta">—</p>
+          <p id="hero-summary" class="summary">—</p>
+          <div class="hero__actions">
+            <a id="hero-email" class="btn" href="#">البريد الإلكتروني</a>
+            <a id="hero-phone" class="btn btn--ghost" href="#">الهاتف</a>
+            <a id="hero-site" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">الموقع الشخصي</a>
+            <a id="hero-cv" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">تحميل السيرة</a>
+          </div>
         </div>
-        <div class="contact-item">
-          <span class="contact-label">الموقع الشخصي</span>
-          <a id="contact-website" href="https://abdullah.dev" target="_blank" rel="noreferrer">abdullah.dev</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">الموقع</span>
-          <span id="contact-location">الرياض، المملكة العربية السعودية</span>
+        <div class="hero__badge">
+          <div class="badge">
+            <span class="dot"></span>
+            <span id="hero-status">متاح للتواصل</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <div class="section-header">
+    <section id="about" class="section card">
+      <div class="section__header">
+        <h2>نبذة مختصرة</h2>
+        <p class="section__hint">ملخص سريع</p>
+      </div>
+      <p id="about-text" class="body-text">—</p>
+    </section>
+
+    <section id="experience" class="section card">
+      <div class="section__header">
+        <h2>الخبرة العملية</h2>
+        <p class="section__hint">الأدوار والمسؤوليات</p>
+      </div>
+      <div id="experience-list" class="stack"></div>
+    </section>
+
+    <section id="achievements" class="section card">
+      <div class="section__header">
+        <h2>أبرز الإنجازات</h2>
+        <p class="section__hint">نتائج ملموسة</p>
+      </div>
+      <div id="achievements-list" class="grid cards"></div>
+    </section>
+
+    <section id="education" class="section card">
+      <div class="section__header">
+        <h2>المؤهلات العلمية</h2>
+        <p class="section__hint">الدراسة الأكاديمية</p>
+      </div>
+      <div id="education-list" class="stack"></div>
+    </section>
+
+    <section id="trainings" class="section card">
+      <div class="section__header">
+        <h2>الدورات والشهادات</h2>
+        <p class="section__hint">التطوير المهني</p>
+      </div>
+      <div id="trainings-list" class="grid cards"></div>
+    </section>
+
+    <section id="skills" class="section card">
+      <div class="section__header">
         <h2>المهارات</h2>
-        <p class="section-subtitle">الأدوات والتقنيات التي أعمل بها</p>
+        <p class="section__hint">حسب الفئة</p>
       </div>
-      <div class="pill-group" id="skills">
-        <span class="pill">جافاسكريبت (ES6+)</span>
-        <span class="pill">تايب سكريبت</span>
-        <span class="pill">React</span>
-        <span class="pill">Node.js</span>
-        <span class="pill">واجهات REST</span>
-        <span class="pill">HTML و CSS</span>
-        <span class="pill">Git و GitHub</span>
-        <span class="pill">اختبارات وحدات</span>
-      </div>
+      <div id="skills-list" class="stack"></div>
     </section>
 
-    <section class="card">
-      <div class="section-header">
-        <h2>الخبرات</h2>
-        <p class="section-subtitle">الأدوار والمشروعات</p>
+    <section id="keywords" class="section card">
+      <div class="section__header">
+        <h2>الكلمات والجدارات</h2>
+        <p class="section__hint">أهم الكلمات المفتاحية</p>
       </div>
-      <div id="experience-list">
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <p class="meta-title">BrightPath Labs</p>
-            <p class="meta-role">مطور واجهات أمامية مبتدئ · عن بُعد</p>
-            <p class="meta-period">2023 – الآن</p>
-          </div>
-          <ul class="highlights">
-            <li>بناء مكونات React قابلة لإعادة الاستخدام ووحدات مساعدة زادت سرعة تسليم الميزات بحوالي 20٪.</li>
-            <li>التعاون مع المصممين لتطبيق تصاميم متجاوبة وتحسينات وصول وفق معايير WCAG 2.1 AA.</li>
-            <li>دمج واجهات REST وتحسين التعامل مع الأخطاء على الواجهة الأمامية لتجربة مستخدم أكثر سلاسة.</li>
-          </ul>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <p class="meta-title">Tech Horizons</p>
-            <p class="meta-role">متدرب تطوير برمجيات · جدة، المملكة العربية السعودية</p>
-            <p class="meta-period">2022</p>
-          </div>
-          <ul class="highlights">
-            <li>تطوير نماذج أولية للوحات معلومات داخلية باستخدام جافاسكريبت ومكتبات رسوم لعرض مؤشرات الأداء.</li>
-            <li>أتمتة سكريبات تنظيف البيانات في Node.js لتقليل وقت إعداد التقارير اليدوي بنسبة 30٪.</li>
-            <li>توثيق خطوات الانضمام وشرح الشيفرة لمساعدة المتدربين الجدد على الانطلاق بسرعة.</li>
-          </ul>
-        </article>
+      <div id="keywords-list" class="tags"></div>
+    </section>
+
+    <section id="contact" class="section card">
+      <div class="section__header">
+        <h2>تواصل معي</h2>
+        <p class="section__hint">بيانات الاتصال</p>
       </div>
+      <div id="contact-list" class="contact-grid"></div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__content">
+    <div class="container footer__inner">
       <div>
-        <p class="footer__title">لنتواصل</p>
-        <p class="footer__text">يسعدني النقاش حول فرص أو تعاون جديد.</p>
+        <p class="footer__title" id="footer-name">—</p>
+        <p class="footer__text">تم إعداد هذه الصفحة بتنسيق عربي وبتصميم حديث.</p>
       </div>
-      <div class="footer__links">
-        <a id="footer-email" href="mailto:abdullah.al-shehri@example.com">abdullah.al-shehri@example.com</a>
-        <a id="footer-website" href="https://abdullah.dev" target="_blank" rel="noreferrer">abdullah.dev</a>
-      </div>
+      <div class="footer__links" id="footer-links"></div>
     </div>
   </footer>
 
   <script>
+    const empty = '—';
+
+    const safeText = (value, fallback = empty) => {
+      if (Array.isArray(value)) return value.length ? value : [];
+      if (value === null || value === undefined) return fallback;
+      if (typeof value === 'string' && value.trim() === '') return fallback;
+      return value;
+    };
+
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = safeText(value);
+      el.textContent = text;
+    };
+
+    const createPill = (text) => {
+      const span = document.createElement('span');
+      span.className = 'pill';
+      span.textContent = text;
+      return span;
+    };
+
+    const renderTimeline = (list, containerId) => {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      if (!list || list.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      list.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'timeline';
+
+        const header = document.createElement('div');
+        header.className = 'timeline__header';
+
+        const title = document.createElement('p');
+        title.className = 'timeline__title';
+        title.textContent = safeText(item.role, empty);
+
+        const place = document.createElement('p');
+        place.className = 'timeline__meta';
+        const parts = [safeText(item.company, empty), safeText(item.location, empty)].filter(Boolean).join(' · ');
+        place.textContent = parts || empty;
+
+        const period = document.createElement('p');
+        period.className = 'timeline__period';
+        period.textContent = safeText(item.period, empty);
+
+        header.append(title, place, period);
+
+        const body = document.createElement('ul');
+        body.className = 'bullets';
+        (item.details || item.highlights || []).forEach((detail) => {
+          const li = document.createElement('li');
+          li.textContent = detail;
+          body.appendChild(li);
+        });
+
+        card.append(header, body);
+        container.appendChild(card);
+      });
+    };
+
+    const renderCards = (list, containerId) => {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      if (!list || list.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      list.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'mini-card';
+
+        const title = document.createElement('p');
+        title.className = 'mini-card__title';
+        title.textContent = safeText(item.title || item.name, empty);
+
+        const meta = document.createElement('p');
+        meta.className = 'mini-card__meta';
+        const parts = [item.issuer || item.organization, item.period].filter(Boolean).join(' · ');
+        meta.textContent = parts || empty;
+
+        const desc = document.createElement('p');
+        desc.className = 'mini-card__text';
+        desc.textContent = safeText(item.description, empty);
+
+        card.append(title, meta, desc);
+        container.appendChild(card);
+      });
+    };
+
+    const renderSkills = (skills) => {
+      const container = document.getElementById('skills-list');
+      container.innerHTML = '';
+      if (!skills || skills.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      skills.forEach((group) => {
+        const block = document.createElement('div');
+        block.className = 'skill-block';
+
+        const title = document.createElement('p');
+        title.className = 'skill-block__title';
+        title.textContent = safeText(group.category || group.label, empty);
+
+        const pills = document.createElement('div');
+        pills.className = 'pill-row';
+        (group.items || group.skills || []).forEach((skill) => {
+          pills.appendChild(createPill(skill));
+        });
+
+        block.append(title, pills);
+        container.appendChild(block);
+      });
+    };
+
+    const renderKeywords = (keywords) => {
+      const container = document.getElementById('keywords-list');
+      container.innerHTML = '';
+      if (!keywords || keywords.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات متاحة حالياً.' + '</p>';
+        return;
+      }
+      keywords.forEach((word) => {
+        container.appendChild(createPill(word));
+      });
+    };
+
+    const renderContact = (contact = {}) => {
+      const container = document.getElementById('contact-list');
+      container.innerHTML = '';
+      const items = [];
+
+      if (contact.email) items.push({ label: 'البريد الإلكتروني', value: contact.email, href: `mailto:${contact.email}` });
+      if (contact.phone) items.push({ label: 'الهاتف', value: contact.phone, href: `tel:${contact.phone}` });
+      if (contact.website) items.push({ label: 'الموقع الشخصي', value: contact.website, href: contact.website, isExternal: true });
+
+      if (items.length === 0) {
+        container.innerHTML = '<p class="muted">' + 'لا توجد بيانات تواصل متاحة حالياً.' + '</p>';
+        return;
+      }
+
+      items.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'contact-card';
+
+        const label = document.createElement('p');
+        label.className = 'contact-card__label';
+        label.textContent = item.label;
+
+        const link = document.createElement('a');
+        link.className = 'contact-card__value';
+        link.textContent = item.value;
+        link.href = item.href;
+        link.target = item.isExternal ? '_blank' : '_self';
+        link.rel = item.isExternal ? 'noreferrer' : '';
+
+        card.append(label, link);
+        container.appendChild(card);
+      });
+    };
+
+    const applyLinkOrDisable = (el, href, textWhenMissing) => {
+      if (!el) return;
+      if (href) {
+        el.href = href;
+        el.classList.remove('btn--disabled');
+      } else {
+        el.href = '#';
+        el.classList.add('btn--disabled');
+        if (textWhenMissing) el.textContent = textWhenMissing;
+      }
+    };
+
     async function loadProfile() {
       try {
-        const response = await fetch('data/profile.json');
-        if (!response.ok) throw new Error('Unable to load profile');
+        const response = await fetch('./data/profile.json');
+        if (!response.ok) throw new Error('تعذر تحميل البيانات');
         const profile = await response.json();
 
-        document.getElementById('name').textContent = profile.name;
-        document.title = `السيرة الذاتية | ${profile.name}`;
+        const name = safeText(profile.name, empty);
+        const title = safeText(profile.title, empty);
+        const location = safeText(profile.location, empty);
+        const summary = safeText(profile.summary || profile.about, empty);
+        const about = safeText(profile.about || profile.summary, empty);
 
-        document.getElementById('title').textContent = `${profile.title} · ${profile.location}`;
-        document.getElementById('summary').textContent = profile.summary;
-        document.getElementById('profile-summary').textContent = profile.summary;
-        document.getElementById('location').textContent = profile.location;
-        document.getElementById('contact-location').textContent = profile.location;
+        document.title = name !== empty ? `السيرة الذاتية | ${name}` : 'السيرة الذاتية';
 
-        const emailLink = document.getElementById('email-link');
-        const websiteLink = document.getElementById('website-link');
-        const footerEmail = document.getElementById('footer-email');
-        const footerWebsite = document.getElementById('footer-website');
-        const contactEmail = document.getElementById('contact-email');
-        const contactWebsite = document.getElementById('contact-website');
+        setText('nav-name', name);
+        setText('nav-title', title || location);
 
-        if (profile.email) {
-          const mailto = `mailto:${profile.email}`;
-          emailLink.href = mailto;
-          emailLink.textContent = 'راسلني';
-          footerEmail.href = mailto;
-          footerEmail.textContent = profile.email;
-          contactEmail.href = mailto;
-          contactEmail.textContent = profile.email;
-        }
+        setText('hero-name', name);
+        setText('hero-title', title);
+        setText('hero-location', location);
+        setText('hero-summary', summary);
+        setText('about-text', about);
+        setText('footer-name', name);
 
-        if (profile.website) {
-          websiteLink.href = profile.website;
-          footerWebsite.href = profile.website;
-          contactWebsite.href = profile.website;
-          const cleanUrl = profile.website.replace(/^https?:\/\//, '');
-          footerWebsite.textContent = cleanUrl;
-          contactWebsite.textContent = cleanUrl;
-        }
+        const contact = profile.contact || {};
+        applyLinkOrDisable(document.getElementById('nav-cv'), contact.cv, 'قريباً');
+        applyLinkOrDisable(document.getElementById('hero-cv'), contact.cv, 'قريباً');
+        applyLinkOrDisable(document.getElementById('hero-site'), contact.website, '—');
+        applyLinkOrDisable(document.getElementById('hero-email'), contact.email ? `mailto:${contact.email}` : '', '—');
+        applyLinkOrDisable(document.getElementById('hero-phone'), contact.phone ? `tel:${contact.phone}` : '', '—');
 
-        const skills = document.getElementById('skills');
-        skills.innerHTML = '';
-        (profile.skills || []).forEach((skill) => {
-          const pill = document.createElement('span');
-          pill.className = 'pill';
-          pill.textContent = skill;
-          skills.appendChild(pill);
+        const footerLinks = document.getElementById('footer-links');
+        footerLinks.innerHTML = '';
+        ['email', 'phone', 'website'].forEach((key) => {
+          if (!contact[key]) return;
+          const link = document.createElement('a');
+          link.href = key === 'email' ? `mailto:${contact.email}` : key === 'phone' ? `tel:${contact.phone}` : contact.website;
+          link.textContent = contact[key];
+          link.target = key === 'website' ? '_blank' : '_self';
+          link.rel = key === 'website' ? 'noreferrer' : '';
+          footerLinks.appendChild(link);
         });
 
-        const experienceList = document.getElementById('experience-list');
-        experienceList.innerHTML = '';
-        (profile.experience || []).forEach((item) => {
-          const article = document.createElement('article');
-          article.className = 'timeline-item';
-
-          const meta = document.createElement('div');
-          meta.className = 'timeline-meta';
-
-          const company = document.createElement('p');
-          company.className = 'meta-title';
-          company.textContent = item.company;
-
-          const role = document.createElement('p');
-          role.className = 'meta-role';
-          role.textContent = `${item.role} · ${item.location}`;
-
-          const period = document.createElement('p');
-          period.className = 'meta-period';
-          period.textContent = item.period;
-
-          meta.append(company, role, period);
-
-          const highlights = document.createElement('ul');
-          highlights.className = 'highlights';
-          (item.highlights || []).forEach((h) => {
-            const li = document.createElement('li');
-            li.textContent = h;
-            highlights.appendChild(li);
-          });
-
-          article.append(meta, highlights);
-          experienceList.appendChild(article);
-        });
+        renderTimeline(profile.experience, 'experience-list');
+        renderCards(profile.achievements, 'achievements-list');
+        renderTimeline(profile.education, 'education-list');
+        renderCards(profile.trainings, 'trainings-list');
+        renderSkills(profile.skills);
+        renderKeywords(profile.keywords);
+        renderContact(contact);
       } catch (error) {
         console.error(error);
-        document.getElementById('profile-card').insertAdjacentHTML(
-          'beforeend',
-          '<p class="error">تعذر تحميل بيانات الملف الشخصي.</p>'
-        );
+        const main = document.querySelector('main');
+        main.insertAdjacentHTML('afterbegin', '<div class="error">تعذر تحميل بيانات السيرة الذاتية.</div>');
       }
     }
 
